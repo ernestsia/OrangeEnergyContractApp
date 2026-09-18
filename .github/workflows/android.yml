@@ -32,3 +32,12 @@ jobs:
       with:
         name: OrangeEnergyContract-APK
         path: app/build/outputs/apk/debug/*.apk
+
+    - name: Generate Direct QR Code & Link
+      run: |
+        ARTIFACT_URL="https://nightly.link/${{ github.repository }}/workflows/android/main/OrangeEnergyContract-APK.zip"
+        echo "### 📱 Quick APK Download Link" >> $GITHUB_STEP_SUMMARY
+        echo "[Click here to download APK]($ARTIFACT_URL)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📷 Scan to Install on Device" >> $GITHUB_STEP_SUMMARY
+        echo "![Scan QR Code](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=$ARTIFACT_URL)" >> $GITHUB_STEP_SUMMARY
