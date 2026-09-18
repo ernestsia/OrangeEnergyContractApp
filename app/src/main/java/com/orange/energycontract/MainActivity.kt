@@ -28,17 +28,20 @@ class MainActivity : AppCompatActivity() {
         val etPaymentDuration = findViewById<TextInputEditText>(R.id.etPaymentDuration)
         val etTotalPrice = findViewById<TextInputEditText>(R.id.etTotalPrice)
 
-        val signatureView = findViewById<SignatureView>(R.id.signatureView)
-        val btnClearSignature = findViewById<Button>(R.id.btnClearSignature)
+        val customerSignatureView = findViewById<SignatureView>(R.id.customerSignatureView)
+        val agentSignatureView = findViewById<SignatureView>(R.id.agentSignatureView)
+        val btnClearCustomerSignature = findViewById<Button>(R.id.btnClearCustomerSignature)
+        val btnClearAgentSignature = findViewById<Button>(R.id.btnClearAgentSignature)
 
-        btnClearSignature?.setOnClickListener {
-            signatureView?.clear()
-        }
+        btnClearCustomerSignature?.setOnClickListener { customerSignatureView?.clear() }
+        btnClearAgentSignature?.setOnClickListener { agentSignatureView?.clear() }
 
         fun calculateTotal() {
             val sub = etSubscriptionFees?.text?.toString()?.toDoubleOrNull() ?: 0.0
             val monthly = etMonthlyPayment?.text?.toString()?.toDoubleOrNull() ?: 0.0
             val months = etPaymentDuration?.text?.toString()?.toDoubleOrNull() ?: 24.0
+            
+            // Formula: Subscription Fee + (Monthly Payment * Duration)
             val total = sub + (monthly * months)
             if (total > 0) {
                 etTotalPrice?.setText(total.toString())
@@ -59,9 +62,14 @@ class MainActivity : AppCompatActivity() {
 
         rgOffers?.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.rbEssentialPlus -> {
+                R.id.rbEssentialPlusRevamp -> {
                     etSubscriptionFees?.setText("2500")
                     etMonthlyPayment?.setText("1300")
+                    etPaymentDuration?.setText("24")
+                }
+                R.id.rbComfortPlusSunking -> {
+                    etSubscriptionFees?.setText("5250")
+                    etMonthlyPayment?.setText("6600")
                     etPaymentDuration?.setText("24")
                 }
                 R.id.rbComfortSiaPower -> {
@@ -69,14 +77,14 @@ class MainActivity : AppCompatActivity() {
                     etMonthlyPayment?.setText("6600")
                     etPaymentDuration?.setText("24")
                 }
-                R.id.rbPremiumFreezer -> {
-                    etSubscriptionFees?.setText("12745")
-                    etMonthlyPayment?.setText("12745")
-                    etPaymentDuration?.setText("24")
-                }
-                R.id.rbPremiumFridge -> {
+                R.id.rbComfortPremiumFridge -> {
                     etSubscriptionFees?.setText("10000")
                     etMonthlyPayment?.setText("9995")
+                    etPaymentDuration?.setText("24")
+                }
+                R.id.rbComfortPremiumFreezer -> {
+                    etSubscriptionFees?.setText("12745")
+                    etMonthlyPayment?.setText("12745")
                     etPaymentDuration?.setText("24")
                 }
             }
@@ -109,13 +117,16 @@ class MainActivity : AppCompatActivity() {
                 isValid = false
             }
 
-            if (signatureView?.isEmpty() == true) {
-                Toast.makeText(this, "Please provide a signature before submitting", Toast.LENGTH_SHORT).show()
+            if (customerSignatureView?.isEmpty() == true) {
+                Toast.makeText(this, "Please provide the Customer Signature", Toast.LENGTH_SHORT).show()
+                isValid = false
+            } else if (agentSignatureView?.isEmpty() == true) {
+                Toast.makeText(this, "Please provide the OE Installer/Agent Signature", Toast.LENGTH_SHORT).show()
                 isValid = false
             }
 
             if (isValid) {
-                Toast.makeText(this, "Complete Contract Validated & Saved Successfully!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Complete Contract Validated & Submitted Successfully!", Toast.LENGTH_LONG).show()
             }
         }
     }

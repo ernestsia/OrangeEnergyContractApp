@@ -178,24 +178,142 @@
 
         <!-- 3. ORANGE ENERGY OFFERS -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3. Select Orange Energy Offer"
+            android:text="ORANGE ENERGY OFFERS"
+            android:background="#FF6600"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
+            android:padding="10dp"
             android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
 
         <RadioGroup
             android:id="@+id/rgOffers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp">
-            <RadioButton android:id="@+id/rbEssentialPlus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Essential Plus" />
-            <RadioButton android:id="@+id/rbRevamp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Revamp" />
-            <RadioButton android:id="@+id/rbComfortSiaPower" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Comfort Sia Power" />
-            <RadioButton android:id="@+id/rbComfort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Comfort" />
-            <RadioButton android:id="@+id/rbPremiumFreezer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Premium - Freezer" />
-            <RadioButton android:id="@+id/rbPremiumFridge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Premium - Fridge" />
+
+            <!-- Essential Plus Revamp -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_marginBottom="8dp">
+                <RadioButton
+                    android:id="@+id/rbEssentialPlusRevamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Essential Plus Revamp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Fees: $2,500 LRD | Duration: 24 mos | Monthly: $1,300 LRD | Total: $33,700 LRD"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Comfort Plus Sunking -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_marginBottom="8dp">
+                <RadioButton
+                    android:id="@+id/rbComfortPlusSunking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comfort Plus Sunking"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Fees: $5,250 LRD | Duration: 24 mos | Monthly: $6,600 LRD | Total: $163,650 LRD"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Comfort Sia Power -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_marginBottom="8dp">
+                <RadioButton
+                    android:id="@+id/rbComfortSiaPower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comfort Sia Power"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $6,600 LRD | Total: $163,650 LRD"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Comfort Premium - Fridge -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_marginBottom="8dp">
+                <RadioButton
+                    android:id="@+id/rbComfortPremiumFridge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comfort Premium - Fridge"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $9,995 LRD | Total: $239,880 LRD"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Comfort Premium - Freezer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_marginBottom="8dp">
+                <RadioButton
+                    android:id="@+id/rbComfortPremiumFreezer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comfort Premium - Freezer"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription Fees: $12,745 LRD | Duration: 24 mos | Monthly: $12,745 LRD | Total: $305,880 LRD"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
         </RadioGroup>
 
         <!-- Pricing Fields -->
@@ -247,7 +365,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Total Amount (Subscription + Total Monthly)"
+            android:hint="Total Amount (Subscription + Monthly x 24)"
             android:layout_marginBottom="16dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTotalPrice"
@@ -350,28 +468,65 @@
                 android:maxLength="10" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 6. DIGITAL SIGNATURE -->
+        <!-- 6. SIGNATURES -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6. OE Installer / Agent Signature"
+            android:text="6. Signatures"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
+
+        <!-- Customer Signature -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Signature"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#FF6600"
+            android:layout_marginBottom="4dp" />
 
         <com.example.orangeenergycontractapp.SignatureView
-            android:id="@+id/signatureView"
+            android:id="@+id/customerSignatureView"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:background="#EEEEEE"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="4dp" />
 
         <Button
-            android:id="@+id/btnClearSignature"
+            android:id="@+id/btnClearCustomerSignature"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear Signature"
+            android:text="Clear Customer Signature"
+            android:textColor="#FF6600"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp" />
+
+        <!-- OE Installer / Agent Signature -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OE Installer / Agent Signature"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#FF6600"
+            android:layout_marginBottom="4dp" />
+
+        <com.example.orangeenergycontractapp.SignatureView
+            android:id="@+id/agentSignatureView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#EEEEEE"
+            android:layout_marginBottom="4dp" />
+
+        <Button
+            android:id="@+id/btnClearAgentSignature"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Agent Signature"
             android:textColor="#FF6600"
             android:layout_gravity="end"
             android:layout_marginBottom="16dp" />
