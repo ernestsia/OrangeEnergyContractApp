@@ -18,6 +18,16 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+// Import generated resource class
+import com.orange.energycontract.R
+
+// Import custom application classes/views/models
+// Adjust these subpackage paths if your files live under different packages
+import com.orange.energycontract.data.ContractRepository
+import com.orange.energycontract.data.ContractDraft
+import com.orange.energycontract.utils.PdfGenerator
+import com.orange.energycontract.ui.SignatureView
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
