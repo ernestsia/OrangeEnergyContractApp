@@ -18,12 +18,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-// Explicit R import to make sure all view IDs resolve smoothly
-import com.example.orangeenergycontractapp.R
-
-class MainActivity : AppCompatActivity() {
-    // ... rest of your code remains the same ...
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -237,6 +231,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Edit Form", null)
                 .show()
-        }
-    }
-}
+        } // Closes btnSubmit.setOnClickListener
+    } // Closes onCreate
+} // Closes MainActivity
