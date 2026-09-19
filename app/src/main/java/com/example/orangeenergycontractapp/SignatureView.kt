@@ -57,4 +57,12 @@ class SignatureView @JvmOverloads constructor(
     fun isEmpty(): Boolean {
         return path.isEmpty
     }
+
+    fun getSignatureBitmap(): Bitmap? {
+    if (isEmpty()) return null
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    draw(canvas)
+    return bitmap
+    }
 }

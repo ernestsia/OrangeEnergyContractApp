@@ -148,6 +148,30 @@ class MainActivity : AppCompatActivity() {
             if (isValid) {
                 Toast.makeText(this, "Contract Validated & Submitted Successfully!", Toast.LENGTH_LONG).show()
             }
+            if (isValid) {
+    val selectedOfferId = rgOffers?.checkedRadioButtonId ?: -1
+    val selectedRadioButton = findViewById<RadioButton>(selectedOfferId)
+    val offerTitle = selectedRadioButton?.text?.toString()?.substringBefore("\n") ?: "N/A"
+
+    PdfGenerator.generateContractPdf(
+        context = this,
+        fullName = findViewById<TextInputEditText>(R.id.etFullName)?.text?.toString().orEmpty(),
+        address = findViewById<TextInputEditText>(R.id.etAddress)?.text?.toString().orEmpty(),
+        phone = etPhone?.text?.toString().orEmpty(),
+        idType = actvIdType?.text?.toString().orEmpty(),
+        idNumber = findViewById<TextInputEditText>(R.id.etIdNumber)?.text?.toString().orEmpty(),
+        email = findViewById<TextInputEditText>(R.id.etEmail)?.text?.toString().orEmpty(),
+        offerName = offerTitle,
+        subFee = etSubscriptionFees?.text?.toString().orEmpty(),
+        monthlyPayment = etMonthlyPayment?.text?.toString().orEmpty(),
+        duration = etPaymentDuration?.text?.toString().orEmpty(),
+        totalAmount = etTotalPrice?.text?.toString().orEmpty(),
+        agentName = findViewById<TextInputEditText>(R.id.etAgentName)?.text?.toString().orEmpty(),
+        agentContact = etAgentContact?.text?.toString().orEmpty(),
+        customerSig = customerSignatureView?.getSignatureBitmap(),
+        agentSig = agentSignatureView?.getSignatureBitmap()
+    )
+}
         }
     }
 }
