@@ -18,16 +18,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Dropdown setup
         val actvIdType = findViewById<AutoCompleteTextView>(R.id.actvIdType)
         val idTypes = arrayOf("NASSCORP ID", "National ID", "Passport", "Driver's License", "Voter ID")
         actvIdType?.setAdapter(ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, idTypes))
 
+        // Offer & Pricing References
         val rgOffers = findViewById<RadioGroup>(R.id.rgOffers)
         val etSubscriptionFees = findViewById<TextInputEditText>(R.id.etSubscriptionFees)
         val etMonthlyPayment = findViewById<TextInputEditText>(R.id.etMonthlyPayment)
         val etPaymentDuration = findViewById<TextInputEditText>(R.id.etPaymentDuration)
         val etTotalPrice = findViewById<TextInputEditText>(R.id.etTotalPrice)
 
+        // Signature References
         val customerSignatureView = findViewById<SignatureView>(R.id.customerSignatureView)
         val agentSignatureView = findViewById<SignatureView>(R.id.agentSignatureView)
         val btnClearCustomerSignature = findViewById<Button>(R.id.btnClearCustomerSignature)
@@ -36,12 +39,12 @@ class MainActivity : AppCompatActivity() {
         btnClearCustomerSignature?.setOnClickListener { customerSignatureView?.clear() }
         btnClearAgentSignature?.setOnClickListener { agentSignatureView?.clear() }
 
+        // Formula: Total = Monthly Payment * Duration
         fun calculateTotal() {
             val monthly = etMonthlyPayment?.text?.toString()?.toDoubleOrNull() ?: 0.0
             val months = etPaymentDuration?.text?.toString()?.toDoubleOrNull() ?: 24.0
-            
-            // Subscription fee stands alone; Total = Monthly Payment * Duration
             val total = monthly * months
+            
             if (total > 0) {
                 etTotalPrice?.setText(String.format("%.2f LRD", total))
             } else {
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Live calculation listener
         val watcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { calculateTotal() }
@@ -59,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         etMonthlyPayment?.addTextChangedListener(watcher)
         etPaymentDuration?.addTextChangedListener(watcher)
 
+        // Autofill logic when selecting an offer
         rgOffers?.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.rbEssentialPlusRevamp -> {
@@ -90,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             calculateTotal()
         }
 
+        // Form Validation & Submission
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
         btnSubmit?.setOnClickListener {
             val etPhone = findViewById<TextInputEditText>(R.id.etPhone)

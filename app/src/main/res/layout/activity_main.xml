@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Orange Energy Contract"
+            android:text="Orange Energy Subscriber Contract"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FF6600"
@@ -194,169 +194,54 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp">
 
-            <!-- Essential Plus Revamp -->
-            <com.google.android.material.card.MaterialCardView
+            <RadioButton
+                android:id="@+id/rbEssentialPlusRevamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="4dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp"
-                    android:gravity="center">
-                    <RadioButton
-                        android:id="@+id/rbEssentialPlusRevamp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Essential Plus Revamp"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Subscription Fees: $2,500 LRD | Duration: 24 mos | Monthly: $1,300 LRD | Total: $33,700 LRD"
-                        android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:padding="8dp"
+                android:text="Essential Plus Revamp\nSubscription Fees: $2,500 LRD | Duration: 24 mos | Monthly: $1,300 LRD"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Comfort Plus Sunking -->
-            <com.google.android.material.card.MaterialCardView
+            <RadioButton
+                android:id="@+id/rbComfortPlusSunking"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="4dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp"
-                    android:gravity="center">
-                    <RadioButton
-                        android:id="@+id/rbComfortPlusSunking"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Comfort Plus Sunking"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Subscription Fees: $5,250 LRD | Duration: 24 mos | Monthly: $6,600 LRD | Total: $163,650 LRD"
-                        android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:padding="8dp"
+                android:text="Comfort Plus Sunking\nSubscription Fees: $5,250 LRD | Duration: 24 mos | Monthly: $6,600 LRD"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Comfort Sia Power -->
-            <com.google.android.material.card.MaterialCardView
+            <RadioButton
+                android:id="@+id/rbComfortSiaPower"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="4dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp"
-                    android:gravity="center">
-                    <RadioButton
-                        android:id="@+id/rbComfortSiaPower"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Comfort Sia Power"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $6,600 LRD | Total: $163,650 LRD"
-                        android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:padding="8dp"
+                android:text="Comfort Sia Power\nSubscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $6,600 LRD"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Comfort Premium - Fridge -->
-            <com.google.android.material.card.MaterialCardView
+            <RadioButton
+                android:id="@+id/rbComfortPremiumFridge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="4dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp"
-                    android:gravity="center">
-                    <RadioButton
-                        android:id="@+id/rbComfortPremiumFridge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Comfort Premium - Fridge"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $9,995 LRD | Total: $239,880 LRD"
-                        android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:padding="8dp"
+                android:text="Comfort Premium - Fridge\nSubscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $9,995 LRD"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Comfort Premium - Freezer -->
-            <com.google.android.material.card.MaterialCardView
+            <RadioButton
+                android:id="@+id/rbComfortPremiumFreezer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="4dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp"
-                    android:gravity="center">
-                    <RadioButton
-                        android:id="@+id/rbComfortPremiumFreezer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Comfort Premium - Freezer"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Subscription Fees: $12,745 LRD | Duration: 24 mos | Monthly: $12,745 LRD | Total: $305,880 LRD"
-                        android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:padding="8dp"
+                android:text="Comfort Premium - Freezer\nSubscription Fees: $12,745 LRD | Duration: 24 mos | Monthly: $12,745 LRD"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
 
         </RadioGroup>
 
-        <!-- Pricing Fields (LRD Only) -->
+        <!-- PRICING INPUT FIELDS -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSubscriptionFees"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
