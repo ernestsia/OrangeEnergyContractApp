@@ -1,4 +1,4 @@
-package com.orange.energycontract
+package com.example.orangeenergycontractapp
 
 import android.os.Bundle
 import android.text.Editable
@@ -18,8 +18,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-// Explicitly import generated R class from the app package namespace
+// Explicit R import to make sure all view IDs resolve smoothly
 import com.example.orangeenergycontractapp.R
+
+class MainActivity : AppCompatActivity() {
+    // ... rest of your code remains the same ...
 
 class MainActivity : AppCompatActivity() {
 
