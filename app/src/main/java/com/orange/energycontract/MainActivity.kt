@@ -1,11 +1,13 @@
 package com.example.orangeenergycontractapp
 
 import android.os.Bundle
+import android.text.Html
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +24,19 @@ class MainActivity : AppCompatActivity() {
         val actvIdType = findViewById<AutoCompleteTextView>(R.id.actvIdType)
         val idTypes = arrayOf("NASSCORP ID", "National ID", "Passport", "Driver's License", "Voter ID")
         actvIdType?.setAdapter(ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, idTypes))
+
+        // Set Bold Offer Names programmatically
+        val rb1 = findViewById<RadioButton>(R.id.rbEssentialPlusRevamp)
+        val rb2 = findViewById<RadioButton>(R.id.rbComfortPlusSunking)
+        val rb3 = findViewById<RadioButton>(R.id.rbComfortSiaPower)
+        val rb4 = findViewById<RadioButton>(R.id.rbComfortPremiumFridge)
+        val rb5 = findViewById<RadioButton>(R.id.rbComfortPremiumFreezer)
+
+        rb1?.text = Html.fromHtml("<b>Essential Plus Revamp</b><br/>Subscription Fees: $2,500 LRD | Duration: 24 mos | Monthly: $1,300 LRD", Html.FROM_HTML_MODE_LEGACY)
+        rb2?.text = Html.fromHtml("<b>Comfort Plus Sunking</b><br/>Subscription Fees: $5,250 LRD | Duration: 24 mos | Monthly: $6,600 LRD", Html.FROM_HTML_MODE_LEGACY)
+        rb3?.text = Html.fromHtml("<b>Comfort Sia Power</b><br/>Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $6,600 LRD", Html.FROM_HTML_MODE_LEGACY)
+        rb4?.text = Html.fromHtml("<b>Comfort Premium - Fridge</b><br/>Subscription Fees: $10,000 LRD | Duration: 24 mos | Monthly: $9,995 LRD", Html.FROM_HTML_MODE_LEGACY)
+        rb5?.text = Html.fromHtml("<b>Comfort Premium - Freezer</b><br/>Subscription Fees: $12,745 LRD | Duration: 24 mos | Monthly: $12,745 LRD", Html.FROM_HTML_MODE_LEGACY)
 
         // Offer & Pricing References
         val rgOffers = findViewById<RadioGroup>(R.id.rgOffers)
