@@ -1,6 +1,7 @@
 package com.example.orangeenergycontractapp
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -33,13 +34,16 @@ class SignatureView @JvmOverloads constructor(
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val x = event.x
         val y = event.y
+
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
                 parent.requestDisallowInterceptTouchEvent(true)
                 path.moveTo(x, y)
                 return true
             }
-            MotionEvent.ACTION_MOVE -> path.lineTo(x, y)
+            MotionEvent.ACTION_MOVE -> {
+                path.lineTo(x, y)
+            }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 parent.requestDisallowInterceptTouchEvent(false)
             }
@@ -59,10 +63,10 @@ class SignatureView @JvmOverloads constructor(
     }
 
     fun getSignatureBitmap(): Bitmap? {
-    if (isEmpty()) return null
-    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-    val canvas = Canvas(bitmap)
-    draw(canvas)
-    return bitmap
+        if (isEmpty() || width <= 0 || height <= 0) return null
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        draw(canvas)
+        return bitmap
     }
 }
