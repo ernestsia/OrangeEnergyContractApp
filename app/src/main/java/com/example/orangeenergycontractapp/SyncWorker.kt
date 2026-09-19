@@ -14,7 +14,7 @@ class SyncWorker(
     workerParams: WorkerParameters
 ) : CoroutineWorker(appContext, workerParams) {
 
-    override suspend doWork(): Result {
+    override suspend fun doWork(): Result {
         val database = AppDatabase.getDatabase(applicationContext)
         val dao = database.contractDao()
         val pendingContracts = dao.getUnsyncedContracts()
@@ -24,7 +24,7 @@ class SyncWorker(
         }
 
         val client = OkHttpClient()
-        val scriptUrl = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE" // Replace with your Web App URL
+        val scriptUrl = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"
 
         var allSynced = true
 
