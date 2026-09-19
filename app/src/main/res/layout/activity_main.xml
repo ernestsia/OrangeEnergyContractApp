@@ -11,15 +11,37 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header -->
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Top Header Container with Title & Top-Right Logo -->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Orange Energy Subscriber Contract"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#FF6600"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvHeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/ivLogo"
+                android:layout_marginEnd="12dp"
+                android:text="Orange Energy Subscriber Contract"
+                android:textColor="#FF6600"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:contentDescription="Orange Energies Logo"
+                android:scaleType="fitEnd"
+                android:src="@drawable/oe" />
+
+        </RelativeLayout>
 
         <!-- 1. SUBSCRIBER DETAILS -->
         <TextView
