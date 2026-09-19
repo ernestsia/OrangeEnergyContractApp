@@ -37,14 +37,13 @@ class MainActivity : AppCompatActivity() {
         btnClearAgentSignature?.setOnClickListener { agentSignatureView?.clear() }
 
         fun calculateTotal() {
-            val sub = etSubscriptionFees?.text?.toString()?.toDoubleOrNull() ?: 0.0
             val monthly = etMonthlyPayment?.text?.toString()?.toDoubleOrNull() ?: 0.0
             val months = etPaymentDuration?.text?.toString()?.toDoubleOrNull() ?: 24.0
             
-            // Formula: Subscription Fee + (Monthly Payment * Duration)
-            val total = sub + (monthly * months)
+            // Subscription fee stands alone; Total = Monthly Payment * Duration
+            val total = monthly * months
             if (total > 0) {
-                etTotalPrice?.setText(total.toString())
+                etTotalPrice?.setText(String.format("%.2f LRD", total))
             } else {
                 etTotalPrice?.setText("")
             }
@@ -126,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (isValid) {
-                Toast.makeText(this, "Complete Contract Validated & Submitted Successfully!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Contract Validated & Submitted Successfully!", Toast.LENGTH_LONG).show()
             }
         }
     }
