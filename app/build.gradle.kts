@@ -8,12 +8,6 @@ plugins {
 android {
     namespace = "com.example.orangeenergycontractapp"
     compileSdk = 34
-    // ...
-}
-
-android {
-    namespace = "com.example.orangeenergycontractapp"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.orangeenergycontractapp"
@@ -34,18 +28,20 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
 }
 
 dependencies {
-    // Firebase BoM & Libraries
-    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+    // Firebase BoM (Pinned to 32.7.4 to match Kotlin 1.9 compiler compatibility)
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
 
