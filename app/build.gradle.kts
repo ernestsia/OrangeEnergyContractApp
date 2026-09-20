@@ -8,6 +8,12 @@ plugins {
 android {
     namespace = "com.example.orangeenergycontractapp"
     compileSdk = 34
+    // ...
+}
+
+android {
+    namespace = "com.example.orangeenergycontractapp"
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.orangeenergycontractapp"
