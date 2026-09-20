@@ -1,5 +1,6 @@
 package com.example.orangeenergycontractapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.Html
@@ -63,6 +64,12 @@ class MainActivity : AppCompatActivity() {
         val tilAgentContact = findViewById<TextInputLayout>(R.id.tilAgentContact)
 
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val btnViewDrafts = findViewById<Button>(R.id.btnViewDrafts)
+
+        // View Drafts Button Action
+        btnViewDrafts?.setOnClickListener {
+            startActivity(Intent(this, DraftsActivity::class.java))
+        }
 
         // Signature References
         val customerSignatureView = findViewById<SignatureView>(R.id.customerSignatureView)
@@ -203,16 +210,7 @@ class MainActivity : AppCompatActivity() {
                         customerSig = customerSignatureView?.getSignatureBitmap(),
                         agentSig = agentSignatureView?.getSignatureBitmap()
                     )
-                    <Button
-    android:id="@+id/btnViewDrafts"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="View Pending Drafts" />
 
-    val btnViewDrafts = findViewById<Button>(R.id.btnViewDrafts)
-btnViewDrafts?.setOnClickListener {
-    startActivity(Intent(this, DraftsActivity::class.java))
-}
                     // Save Draft to Local DB & Schedule Auto-Sync
                     val draft = ContractDraft(
                         fullName = fullName,
@@ -240,6 +238,6 @@ btnViewDrafts?.setOnClickListener {
                 }
                 .setNegativeButton("Edit Form", null)
                 .show()
-        } // Closes btnSubmit.setOnClickListener
-    } // Closes onCreate
-} // Closes MainActivity
+        }
+    }
+}
