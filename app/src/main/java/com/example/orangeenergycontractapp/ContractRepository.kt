@@ -7,21 +7,27 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 
 class ContractRepository(private val context: Context) {
-    private val dao = AppDatabase.getDatabase(context).contractDao()
+
+    private val contractDao = ContractDatabase.getDatabase(context).contractDao()
 
     suspend fun saveDraftAndScheduleSync(draft: ContractDraft) {
-        // 1. Always save to local database first
-        dao.insertContract(draft)
+        // 1. Save to local Room DB immediately (works 100% offline)
+        contractDao.insertDraft(draft)
 
-        // 2. Schedule WorkManager task that runs as soon as network is AVAILABLE
+        // 2. Define network constraint: trigger sync when connected to the internet
         val constraints = Constraints.Builder()
             .setRequiredNetworkType(NetworkType.CONNECTED)
             .build()
 
-        val syncRequest = OneTimeWorkRequestBuilder<SyncWorker>()
+        val syncWorkRequest = OneTimeWorkRequestBuilder<SyncWorker>()
             .setConstraints(constraints)
             .build()
 
-        WorkManager.getInstance(context).enqueue(syncRequest)
+        // 3. Enqueue background sync worker
+        WorkManager.getInstance(context).enqueue(syncWorkRequest)
+    }
+
+    suspend fun getUnsyncedDrafts(): List<ContractDraft> {
+        return contractDao.getUnsyncedDrafts()
     }
 }

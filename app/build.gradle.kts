@@ -55,3 +55,12 @@ dependencies {
     // OkHttp for network requests
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
+dependencies {
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+
+    // Firebase Cloud Firestore
+    implementation("com.google.firebase:firebase-firestore-ktx")
+
+    // ... your other dependencies (Room, Coroutines, etc.)
+}
