@@ -203,7 +203,16 @@ class MainActivity : AppCompatActivity() {
                         customerSig = customerSignatureView?.getSignatureBitmap(),
                         agentSig = agentSignatureView?.getSignatureBitmap()
                     )
+                    <Button
+    android:id="@+id/btnViewDrafts"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="View Pending Drafts" />
 
+    val btnViewDrafts = findViewById<Button>(R.id.btnViewDrafts)
+btnViewDrafts?.setOnClickListener {
+    startActivity(Intent(this, DraftsActivity::class.java))
+}
                     // Save Draft to Local DB & Schedule Auto-Sync
                     val draft = ContractDraft(
                         fullName = fullName,
