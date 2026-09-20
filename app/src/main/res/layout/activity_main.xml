@@ -478,7 +478,13 @@
                 android:textColor="#FF6600"
                 android:layout_gravity="end"
                 android:layout_marginBottom="16dp" />
-
+            <Button
+    android:id="@+id/btnViewDrafts"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="View Pending Drafts"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="match_parent"
